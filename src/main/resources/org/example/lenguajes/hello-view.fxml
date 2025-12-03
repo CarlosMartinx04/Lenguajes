@@ -24,21 +24,21 @@
         <VBox>
             <HBox BorderPane.alignment="CENTER" minWidth="100">
                 <MenuBar>
-                    <Menu text="Archivo"/>
-                    <Menu text="Editar"/>
-                    <Menu text="Ayuda"/>
+                    <Menu fx:id="menuArchivo" text="Archivo"/>
+                    <Menu fx:id="menuEditar" text="Editar"/>
+                    <Menu fx:id="menuAyuda" text="Ayuda"/>
                 </MenuBar>
             </HBox>
 
             <TreeView>
                 <root>
-                    <TreeItem value="Menu Principal">
+                    <TreeItem fx:id="treeItemPRINCIPAL">
                         <children>
-                            <TreeItem value="Gestion">
+                            <TreeItem fx:id="treeItemGESTION">
                                 <children>
-                                    <TreeItem value="Usuarios"/>
-                                    <TreeItem value="Permisos"/>
-                                    <TreeItem value="Roles"/>
+                                    <TreeItem fx:id="treeItemUSUARIOS"/>
+                                    <TreeItem fx:id="treeItemPERMISOS"/>
+                                    <TreeItem fx:id="treeItemROLES"/>
                                 </children>
                             </TreeItem>
                         </children>
@@ -51,13 +51,13 @@
 
     <center>
         <VBox>
-            <ComboBox promptText="Lenguaje"/>
+            <ComboBox fx:id="cbBoxLenguaje" promptText="Lenguaje"/>
             <TextArea minWidth="400" minHeight="200"/>
             <HBox>
-                <Button>Añadir usuario</Button>
-                <Button>Editar usuario</Button>
-                <Button>Eliminar usuario</Button>
-                <Button>Actualizar tabla</Button>
+                <Button fx:id="btnADDuser">Añadir usuario</Button>
+                <Button fx:id="btnEDITuser">Editar usuario</Button>
+                <Button fx:id="btnDELETEuser">Eliminar usuario</Button>
+                <Button fx:id="btnUPDATEuser">Actualizar tabla</Button>
             </HBox>
         </VBox>
     </center>
@@ -67,8 +67,8 @@
             <padding>
                 <Insets top="30" left="20.0" right="20.0" bottom="0"/>
             </padding>
-            <Label text="Detalles"/>
-            <Label text="Informacion detallada sobre usuarios"/>
+            <Label fx:id="labelDetails" text="Detalles"/>
+            <Label fx:id="labelInformationDetails" text="Informacion detallada sobre usuarios"/>
         </VBox>
 
     </right>
