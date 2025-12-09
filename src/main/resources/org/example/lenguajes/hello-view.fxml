@@ -26,19 +26,19 @@
         <VBox minWidth="100" maxWidth="300">
             <HBox BorderPane.alignment="CENTER" maxWidth="200" >
                 <MenuBar>
-                    <Menu fx:id="menuArchivo" text="Archivo"/>
-                    <Menu fx:id="menuEditar" text="Editar"/>
-                    <Menu fx:id="menuAyuda" text="Ayuda"/>
+                    <Menu fx:id="menuArchivo"/>
+                    <Menu fx:id="menuEditar"/>
+                    <Menu fx:id="menuAyuda"/>
                 </MenuBar>
             </HBox>
 
             <TreeView minWidth="200" maxWidth="200">
                 <TreeItem fx:id="treeItemPRINCIPAL">
                     <children>
-                        <TreeItem fx:id="treeItemGESTION">
+                        <TreeItem fx:id="treeItemMANAGEMENT">
                             <children>
-                                <TreeItem fx:id="treeItemUSUARIOS"/>
-                                <TreeItem fx:id="treeItemPERMISOS"/>
+                                <TreeItem fx:id="treeItemUSERS"/>
+                                <TreeItem fx:id="treeItemPERMITS"/>
                                 <TreeItem fx:id="treeItemROLES"/>
                             </children>
                         </TreeItem>
@@ -53,7 +53,7 @@
         <VBox>
 
             <ComboBox fx:id="cbBoxLenguaje" promptText="Lenguaje"/>
-            <TableView minWidth="300" minHeight="400"/>
+            <TableView fx:id="table" minWidth="300" minHeight="400"/>
             <HBox minHeight="50" spacing="15">
                 <Button fx:id="btnADDuser">Añadir usuario</Button>
                 <Button fx:id="btnEDITuser">Editar usuario</Button>

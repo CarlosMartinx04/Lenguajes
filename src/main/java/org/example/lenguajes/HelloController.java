@@ -2,10 +2,7 @@ package org.example.lenguajes;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TreeItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -17,11 +14,24 @@ import java.util.TreeMap;
 public class HelloController implements Initializable {
     private ResourceBundle bundle;
     @FXML
-    private Label labelDetails = new Label();
+    private Menu menuArchivo = new Menu();
     @FXML
-    private Label labelInformationDetails = new Label();
+    private Menu menuEditar = new Menu();
     @FXML
-    private ComboBox cbBoxLenguaje = new ComboBox<>();
+    private Menu menuAyuda = new Menu();
+    @FXML
+    private TreeItem treeItemPRINCIPAL = new TreeItem<>();
+    @FXML
+    private TreeItem treeItemMANAGEMENT = new TreeItem<>();
+    @FXML
+    private TreeItem treeItemUSERS = new TreeItem<>();
+    @FXML
+    private TreeItem treeItemPERMITS = new TreeItem<>();
+    @FXML
+    private TreeItem treeItemROLES = new TreeItem<>();
+
+    @FXML
+    private TableView table = new TableView();
     @FXML
     private Button btnADDuser = new Button();
     @FXML
@@ -30,6 +40,13 @@ public class HelloController implements Initializable {
     private Button btnDELETEuser = new Button();
     @FXML
     private Button btnUPDATEuser = new Button();
+
+    @FXML
+    private Label labelDetails = new Label();
+    @FXML
+    private Label labelInformationDetails = new Label();
+    @FXML
+    private ComboBox cbBoxLenguaje = new ComboBox<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,6 +79,23 @@ public class HelloController implements Initializable {
         // Cambiar el ResourceBundle según el idioma seleccionado
         bundle = ResourceBundle.getBundle("i18n/Messages", locale);
         // Actualizar los textos de los Labels
+        menuArchivo.setText(bundle.getString("menu.archiveText"));
+        menuEditar.setText(bundle.getString("menu.editText"));
+        menuAyuda.setText(bundle.getString("menu.helpText"));
+        treeItemPRINCIPAL.setValue(bundle.getString("tree.itemPrincipalText"));
+        treeItemMANAGEMENT.setValue(bundle.getString("tree.itemManagementText"));
+        treeItemUSERS.setValue(bundle.getString("tree.itemUsersText"));
+        treeItemPERMITS.setValue(bundle.getString("tree.itemPermitsText"));
+        treeItemROLES.setValue(bundle.getString("tree.itemRolesText"));
+
+        table.setAccessibleText(bundle.getString("table.tableText"));
+        btnADDuser.setText(bundle.getString("btn.addText"));
+        btnDELETEuser.setText(bundle.getString("btn.deleteText"));
+        btnEDITuser.setText(bundle.getString("btn.editText"));
+        btnUPDATEuser.setText(bundle.getString("btn.updateText"));
+
+
+
         labelDetails.setText(bundle.getString("lbl.labelDetails"));
         labelInformationDetails.setText(bundle.getString("lbl.labelInformationDetails"));
 //        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG, locale);
